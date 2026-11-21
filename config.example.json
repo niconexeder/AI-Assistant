@@ -1,0 +1,19 @@
+{
+  "llm": {
+    "mode": "auto",
+    "baseUrl": "https://sfedu-hackathon-ai-gateway.sfedu-hackathon-ai-gateway.workers.dev/v1",
+    "model": "google/gemma-4-31B-it",
+    "apiKey": "",
+    "userAgent": "buyer-assistant/1.0",
+    "timeoutSeconds": 20,
+    "maxTokens": 512,
+    "temperature": 0.0,
+    "maxRetries": 1,
+    "required": false
+  },
+  "app": {
+    "maxOptions": 3,
+    "maxInputBytes": 1048576,
+    "logLevel": "info"
+  }
+}

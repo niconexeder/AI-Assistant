@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+set -eu
+
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+BIN="$ROOT/build/run"
+
+if [ ! -x "$BIN" ]; then
+    echo "[buyer-assistant] $BIN not found. Build the project first:" >&2
+    echo "  cmake -S \"$ROOT\" -B \"$ROOT/build\" -DCMAKE_BUILD_TYPE=Release" >&2
+    echo "  cmake --build \"$ROOT/build\" -j" >&2
+    exit 3
+fi
+
+exec "$BIN" --catalog "$ROOT/data/catalog.json" "$@"
